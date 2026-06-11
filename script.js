@@ -1,12 +1,12 @@
-
 const API_URL = "https://script.google.com/macros/s/AKfycbxyz5IqNmbzeBbLYLzjn-gqVapgVxV82ziIHuovAj3ux7IgmSmnoKGhbQ8m6GLw-tEdZg/exec";
+
 const massarInput = document.getElementById("massar");
 const birthInput = document.getElementById("birth");
 const resultDiv = document.getElementById("result");
 const btn = document.getElementById("btn");
 
 massarInput.addEventListener("input", () => {
-  massarInput.value = massarInput.value.toUpperCase();
+  massarInput.value = massarInput.value.toUpperCase().replace(/\s/g, "");
 });
 
 birthInput.addEventListener("keydown", function(e) {
@@ -22,16 +22,16 @@ massarInput.addEventListener("keydown", function(e) {
 });
 
 async function searchStudent() {
-  const code = massarInput.value.trim().toUpperCase();
+  const code = massarInput.value.trim().toUpperCase().replace(/\s/g, "");
   const birth = birthInput.value.trim();
 
-  if (!code || !birth) {
-    showError("المرجو إدخال رقم مسار وتاريخ الازدياد");
+  if (!code) {
+    showError("المرجو إدخال رقم مسار");
     return;
   }
 
-  if (!code.startsWith("R")) {
-    showError("رقم مسار يجب أن يبدأ بالحرف R");
+  if (!birth) {
+    showError("المرجو إدخال تاريخ الازدياد");
     return;
   }
 
@@ -56,7 +56,7 @@ async function searchStudent() {
     if (data.success) {
       showSuccess(data.nom, data.password);
     } else {
-      showError(data.message || "حدث خطأ");
+      showError(data.message || "المعلومات غير صحيحة");
     }
 
   } catch (error) {
