@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استرجاع الفن السري</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Tahoma", "Arial", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #eef4ff, #f7f7f7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 520px;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #0b5ed7, #174ea6);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .header i {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .header p {
+      margin: 10px 0 0;
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    .content {
+      padding: 28px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .input-group i {
+      position: absolute;
+      top: 43px;
+      right: 14px;
+      color: #0b5ed7;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 42px 14px 14px;
+      border: 1px solid #d6dbe6;
+      border-radius: 14px;
+      font-size: 17px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus {
+      border-color: #0b5ed7;
+      box-shadow: 0 0 0 3px rgba(11,94,215,0.15);
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #0b5ed7, #174ea6);
+      color: white;
+      font-size: 19px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(11,94,215,0.25);
+    }
+
+    button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    #result {
+      margin-top: 22px;
+    }
+
+    .result-box {
+      background: #eef5ff;
+      border: 1px solid #cfe1ff;
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+      color: #123;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .password {
+      margin-top: 12px;
+      padding: 14px;
+      background: white;
+      border-radius: 12px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #0b5ed7;
+      direction: ltr;
+    }
+
+    .error {
+      background: #fff1f1;
+      border: 1px solid #ffcaca;
+      color: #b00020;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .loading {
+      text-align: center;
+      color: #0b5ed7;
+      font-weight: bold;
+    }
+
+    .note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #777;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(8px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <div class="header">
+      <i class="fa-solid fa-lock"></i>
+      <h1>استرجاع الفن السري</h1>
+      <p>أدخل رقم مسار وتاريخ الازدياد للتحقق</p>
+    </div>
+
+    <div class="content">
+      <div class="input-group">
+        <label for="massar">رقم مسار</label>
+        <i class="fa-solid fa-id-card"></i>
+        <input id="massar" type="text" placeholder="مثال: R130757834">
+      </div>
+
+      <div class="input-group">
+        <label for="birth">تاريخ الازدياد</label>
+        <i class="fa-solid fa-calendar-days"></i>
+        <input id="birth" type="text" placeholder="مثال: 09/11/2007 أو 09112007">
+      </div>
+
+      <button id="btn" onclick="searchStudent()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        بحث
+      </button>
+
+      <div id="result"></div>
+
+      <div class="note">
+        يمكن كتابة تاريخ الازدياد بأشكال مختلفة مثل:
+        09/11/2007، 09-11-2007، 09112007
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
