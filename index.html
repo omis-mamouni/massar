@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>استرجاع الفن السري</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>استرجاع القن السري</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -11,59 +11,63 @@
     * {
       box-sizing: border-box;
       font-family: "Tahoma", "Arial", sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
       margin: 0;
       min-height: 100vh;
-      background: linear-gradient(135deg, #eef4ff, #f7f7f7);
+      background: linear-gradient(135deg, #eef4ff, #f8fbff);
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 14px;
     }
 
     .card {
       width: 100%;
-      max-width: 520px;
+      max-width: 460px;
       background: #ffffff;
       border-radius: 24px;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.13);
       overflow: hidden;
     }
 
     .header {
       background: linear-gradient(135deg, #0b5ed7, #174ea6);
       color: white;
-      padding: 30px 20px;
+      padding: 28px 18px 24px;
       text-align: center;
     }
 
     .header i {
-      font-size: 42px;
+      font-size: 44px;
       margin-bottom: 12px;
     }
 
     .header h1 {
       margin: 0;
       font-size: 28px;
+      font-weight: 800;
     }
 
     .header p {
       margin: 10px 0 0;
-      font-size: 15px;
-      opacity: 0.9;
+      font-size: 14px;
+      opacity: 0.95;
+      line-height: 1.7;
     }
 
     .content {
-      padding: 28px;
+      padding: 24px 18px 18px;
     }
 
     label {
       display: block;
-      margin-bottom: 7px;
+      margin-bottom: 8px;
       font-weight: bold;
-      color: #333;
+      color: #222;
+      font-size: 16px;
     }
 
     .input-group {
@@ -73,72 +77,105 @@
 
     .input-group i {
       position: absolute;
-      top: 43px;
-      right: 14px;
+      top: 44px;
+      right: 15px;
       color: #0b5ed7;
+      font-size: 17px;
     }
 
     input {
       width: 100%;
-      padding: 14px 42px 14px 14px;
-      border: 1px solid #d6dbe6;
-      border-radius: 14px;
-      font-size: 17px;
+      padding: 15px 45px 15px 14px;
+      border: 1px solid #d4dbea;
+      border-radius: 16px;
+      font-size: 18px;
       outline: none;
+      direction: ltr;
+      text-align: left;
       transition: 0.2s;
+      background: #fff;
     }
 
     input:focus {
       border-color: #0b5ed7;
-      box-shadow: 0 0 0 3px rgba(11,94,215,0.15);
+      box-shadow: 0 0 0 4px rgba(11,94,215,0.13);
     }
 
     button {
       width: 100%;
-      padding: 15px;
+      padding: 16px;
       border: none;
-      border-radius: 14px;
+      border-radius: 16px;
       background: linear-gradient(135deg, #0b5ed7, #174ea6);
       color: white;
-      font-size: 19px;
+      font-size: 20px;
       font-weight: bold;
       cursor: pointer;
       transition: 0.2s;
     }
 
-    button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(11,94,215,0.25);
+    button:active {
+      transform: scale(0.98);
     }
 
     button:disabled {
-      opacity: 0.7;
+      opacity: 0.75;
       cursor: not-allowed;
     }
 
     #result {
-      margin-top: 22px;
+      margin-top: 20px;
     }
 
     .result-box {
-      background: #eef5ff;
-      border: 1px solid #cfe1ff;
-      border-radius: 16px;
+      background: #f0fff4;
+      border: 1px solid #86efac;
+      border-radius: 18px;
       padding: 18px;
       text-align: center;
       color: #123;
-      animation: fadeIn 0.3s ease;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .result-box h3 {
+      margin: 8px 0 12px;
+      color: #14532d;
+      font-size: 21px;
     }
 
     .password {
       margin-top: 12px;
-      padding: 14px;
+      padding: 15px;
       background: white;
-      border-radius: 12px;
-      font-size: 24px;
+      border: 2px dashed #0b5ed7;
+      border-radius: 14px;
+      font-size: 26px;
       font-weight: bold;
       color: #0b5ed7;
       direction: ltr;
+      text-align: center;
+      letter-spacing: 1px;
+      user-select: all;
+    }
+
+    .massar-note {
+      margin-top: 16px;
+      background: #fff8e6;
+      border: 1px solid #ffd978;
+      color: #6b4e00;
+      border-radius: 15px;
+      padding: 14px;
+      font-size: 14px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .massar-note a {
+      display: inline-block;
+      margin-top: 8px;
+      color: #0b5ed7;
+      font-weight: bold;
+      text-decoration: none;
     }
 
     .error {
@@ -146,28 +183,76 @@
       border: 1px solid #ffcaca;
       color: #b00020;
       border-radius: 16px;
-      padding: 16px;
+      padding: 15px;
       text-align: center;
-      animation: fadeIn 0.3s ease;
+      font-size: 15px;
+      line-height: 1.8;
+      animation: fadeIn 0.25s ease;
     }
 
     .loading {
       text-align: center;
       color: #0b5ed7;
       font-weight: bold;
+      padding: 12px;
     }
 
     .note {
       margin-top: 18px;
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 12px;
       font-size: 13px;
-      color: #777;
+      color: #666;
       text-align: center;
-      line-height: 1.8;
+      line-height: 1.9;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 14px;
+      font-size: 12px;
+      color: #777;
+      border-top: 1px solid #eee;
+      background: #fafafa;
     }
 
     @keyframes fadeIn {
       from {opacity: 0; transform: translateY(8px);}
       to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 480px) {
+      body {
+        align-items: flex-start;
+        padding: 10px;
+      }
+
+      .card {
+        border-radius: 20px;
+      }
+
+      .header {
+        padding: 24px 14px 22px;
+      }
+
+      .header h1 {
+        font-size: 25px;
+      }
+
+      .content {
+        padding: 22px 14px 16px;
+      }
+
+      input {
+        font-size: 17px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+
+      .password {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -177,21 +262,33 @@
   <div class="card">
     <div class="header">
       <i class="fa-solid fa-lock"></i>
-      <h1>استرجاع الفن السري</h1>
-      <p>أدخل رقم مسار وتاريخ الازدياد للتحقق</p>
+      <h1>استرجاع القن السري</h1>
+      <p>أدخل رقم مسار وتاريخ الازدياد للتحقق من هويتك</p>
     </div>
 
     <div class="content">
       <div class="input-group">
         <label for="massar">رقم مسار</label>
         <i class="fa-solid fa-id-card"></i>
-        <input id="massar" type="text" placeholder="مثال: R130757834">
+        <input
+          id="massar"
+          type="text"
+          inputmode="text"
+          autocomplete="off"
+          placeholder="مثال: R1234567890"
+        >
       </div>
 
       <div class="input-group">
         <label for="birth">تاريخ الازدياد</label>
         <i class="fa-solid fa-calendar-days"></i>
-        <input id="birth" type="text" placeholder="مثال: 09/11/2007 أو 09112007">
+        <input
+          id="birth"
+          type="text"
+          inputmode="numeric"
+          autocomplete="off"
+          placeholder="مثال: 09-11-2007"
+        >
       </div>
 
       <button id="btn" onclick="searchStudent()">
@@ -202,9 +299,13 @@
       <div id="result"></div>
 
       <div class="note">
-        يمكن كتابة تاريخ الازدياد بأشكال مختلفة مثل:
-        09/11/2007، 09-11-2007، 09112007
+              
       </div>
+    </div>
+
+    <div class="footer">
+       <br>
+      الموسم الدراسي 2025/2026
     </div>
   </div>
 
