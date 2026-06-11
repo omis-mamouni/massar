@@ -1,5 +1,5 @@
-const API_URL = "COLLER_URL_APPS_SCRIPT_ICI";
 
+const API_URL = "https://script.google.com/macros/s/AKfycbxyz5IqNmbzeBbLYLzjn-gqVapgVxV82ziIHuovAj3ux7IgmSmnoKGhbQ8m6GLw-tEdZg/exec";
 const massarInput = document.getElementById("massar");
 const birthInput = document.getElementById("birth");
 const resultDiv = document.getElementById("result");
