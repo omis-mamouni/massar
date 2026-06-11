@@ -56,7 +56,7 @@ async function searchStudent() {
     if (data.success) {
       showSuccess(data.nom, data.password);
     } else {
-      showError("المعلومات غير صحيحة أو لم يتم العثور على التلميذ");
+      showError(data.message || "حدث خطأ");
     }
 
   } catch (error) {
