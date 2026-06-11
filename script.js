@@ -105,7 +105,9 @@ function showSuccess(nom, password) {
         <a href="https://massarservice.men.gov.ma/moutamadris/Account" target="_blank">
           الدخول إلى مسار متمدرس
         </a>
-      </div>
+        <br>
+        https://massarservice.men.gov.ma/moutamadris/Account
+        </div>
     </div>
   `;
 }
